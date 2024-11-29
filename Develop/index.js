@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer"; // Get user input and create prompts
 import fs from "fs"; // File system module to  write to file
-import generateMarkdown from "./utils/generateMarkdown"; // Create content for README
+import generateMarkdown from "./utils/generateMarkdown.js"; // Create content for README
 import path from "path"; // Handles file paths
 
 // TODO: Create an array of questions for user input
@@ -14,7 +14,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "Please provide a short description of your project.",
+    message: "Please provide a description of your project.",
   },
   {
     type: "input",
@@ -34,6 +34,17 @@ const questions = [
 
   {
     type: "input",
+    name: "requirements",
+    message: "What are the project requirements?",
+  },
+
+  {
+    type: "input",
+    name: "contributers",
+    message: "Please list any project contributers.",
+  },
+  {
+    type: "input",
     name: "contributing",
     message: "How can others contribute to the project?",
   },
@@ -41,6 +52,11 @@ const questions = [
     type: "input",
     name: "tests",
     message: "How can the project be tested?",
+  },
+  {
+    type: "input",
+    name: "issues",
+    message: "How can issues be reported?",
   },
   {
     type: "list",
@@ -61,10 +77,18 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions).then((answers) => {
+    const fileName = `${answers.title.split(" ").join("_")}_README.md`;
+    console.log(`Generating ${fileName} file...`);
+    writeToFile(fileName, generateMarkdown(answers));
+  });
+}
 
 // Function call to initialize app
 init();
