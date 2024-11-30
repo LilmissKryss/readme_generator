@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer"; // Get user input and create prompts
-import fs from "fs"; // File system module to  write to file
+import fs from "fs"; // File system module to write to file
 import generateMarkdown from "./utils/generateMarkdown.js"; // Create content for README
 import path from "path"; // Handles file paths
 
@@ -10,6 +10,11 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the project title?",
+  },
+  {
+    type: "input",
+    name: "name",
+    message: "What is your name?",
   },
   {
     type: "input",
@@ -31,17 +36,15 @@ const questions = [
     name: "installation",
     message: "Please provide installation instructions.",
   },
-
   {
     type: "input",
     name: "requirements",
     message: "What are the project requirements?",
   },
-
   {
     type: "input",
     name: "contributers",
-    message: "Please list any project contributers.",
+    message: "Please list any project contributors.",
   },
   {
     type: "input",
@@ -84,10 +87,31 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    const fileName = `${answers.title.split(" ").join("_")}_README.md`;
-    console.log(`Generating ${fileName} file...`);
-    writeToFile(fileName, generateMarkdown(answers));
+    const projectName = answers.title.split(" ").join("_"); // Generate project folder name
+    const readmeContent = generateMarkdown(answers); // Generate README content
+
+    console.log(`Creating folder and generating README.md file...`);
+    createProjectFolder(projectName, readmeContent); // Create project folder and write README file
   });
+}
+
+function createProjectFolder(projectName, readmeContent) {
+  const projectPath = path.join(process.cwd(), projectName);
+
+  // Create the project directory if it doesn't exist
+  if (!fs.existsSync(projectPath)) {
+    fs.mkdirSync(projectPath);
+  }
+
+  // Define the path for the README file
+  const readmePath = path.join(projectPath, "README.md");
+
+  // Write the README content to the file
+  fs.writeFileSync(readmePath, readmeContent);
+
+  console.log(
+    `README.md has been successfully created in the "${projectName}" folder.`
+  );
 }
 
 // Function call to initialize app

@@ -1,7 +1,9 @@
-# README Generator 
-  byundefined
+# README Generator
+  by Krystal Hardin 
+  
   ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-  ## Table of Contents
+
+  ## Table of Contents 
   * [Description](#description)
   * [Requirements](#requirements)
   * [Usage](#usage)
@@ -18,25 +20,37 @@
   
 * [License](#license)
 
+
   ## Description
-  Command line app that generates a README.md file.
-  
+  Terminal application that generates a readme.md file.
+
   ## Requirements
-  Inquirer 8.2.4  orooor
+  Inquirer 8.2.4 or later 
+
   ## Usage
-  In the terminal the user answers questions to generate a readme file.
+  User answers questions in the terminal to generate a readme.md file.
+
   ## Features
-  Answer questions in the terminal to generate a readme file.
+  User answers questions in the terminal to generate a readme.md file.
+
   ## Installation
-  Install node.js, fs module, and inquirer module.
+  Install node, fs module, and inquirer.
+
   ## Contributers
   N/A
-  Send a pull request to LilmissKryss on Github
+  
+  ## Contributing
+  How to contribute:
+  Send a pull request to LilmissKrys on Github.
+
   ## Tests
-  Test in the terminal 
+  Test in the Terminal.
+
   ## Issues
-  Report issues to krystalhardin2010@att.net
+  Report issues on Github.
+
+
 ## Contact Information
-* Name: undefined
+* Name: Krystal Hardin 
 * Email: krystalhardin2010@att.net
-* GitHub: LilmissKryss
+* GitHub: LilmissKrys
