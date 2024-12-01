@@ -21,7 +21,9 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== "None") {
     return `## License
-     Licensed under the ${license} license.`;
+    This application is covered under the **${license}** license. 
+    For more information, see the [License]
+    (https://choosealicense.com/licenses/${license.toLowerCase()}/).`;
   }
   return "";
 }
@@ -29,11 +31,15 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
   by ${data.name}
-  
+
   ${renderLicenseBadge(data.license)}
 
-  ## Table of Contents 
+  ${renderLicenseSection(data.license)} 
+
+
+  ## Table of Contents 📓
   * [Description](#description)
   * [Requirements](#requirements)
   * [Usage](#usage)
@@ -47,38 +53,39 @@ function generateMarkdown(data) {
   * [Questions](#questions)
   * [GitHub](#github)
   * [Email](#email)
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseLink(data.license)} 
 
-  ## Description
+  ## Description 📝
   ${data.description}
 
-  ## Requirements
+  ## Requirements 📋
   ${data.requirements}
 
-  ## Usage
+  ## Usage 📖
   ${data.usage}
 
-  ## Features
+  ## Features 🔂
   ${data.features}
 
-  ## Installation
+  ## Installation 📥
   ${data.installation}
 
-  ## Contributers
+  ## Contributers 👩🏾‍🤝‍👨🏻
   ${data.contributers}
   
-  ## Contributing
+  ## Contribution Guidelines 🗞️
   How to contribute:
   ${data.contributing}
 
-  ## Tests
+  ## Tests 📚
   ${data.tests}
 
-  ## Issues
+  ## Issues 🐞
   ${data.issues}
 
+  
 
-## Contact Information
+## Contact Information 🖥️
 * Name: ${data.name}
 * Email: ${data.questions}
 * GitHub: ${data.github}
