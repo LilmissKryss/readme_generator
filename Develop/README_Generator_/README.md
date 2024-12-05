@@ -17,35 +17,34 @@ by Krystal Hardin
 - [Usage](#usage)
 - [Features](#features)
 - [Installation](#installation)
-- [Contributers](#contributers)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
+- [Contribution Guidelines](#contributionGuidelines)
 - [Tests](#tests)
 - [Issues](#issues)
 - [License](#license)
 - [Questions](#questions)
 - [GitHub](#github)
 - [Email](#email)
-- [License](#license)
 
 ## Description 📝
 
-Terminal application that generates a readme.md file.
+Terminal application that generates a README.md file
 
 ## Requirements 📋
 
-Inquirer 8.2.4 or later
+Inquirer 8.2.4
 
 ## Usage 📖
 
-Terminal application that generates a readme.md file.
+User answers questions in the terminal to generate a readme file.
 
 ## Features 🔂
 
-User answers questions in the terminal to generate a readme.md file.
+README.md file auto generated in terminal.
 
 ## Installation 📥
 
-Install node, fs module, and inquirer module.
+Install fs module, node, and Inquirer.
 
 ## Contributers 👩🏾‍🤝‍👨🏻
 
@@ -54,11 +53,11 @@ N/A
 ## Contribution Guidelines 🗞️
 
 How to contribute:
-Send a pull request to LilmissKryss on Github.
+Send pull request to LilmissKryss on GitHub.
 
 ## Tests 📚
 
-Test in the Terminal.
+Tes in the Terminal.
 
 ## Issues 🐞
 
@@ -67,5 +66,5 @@ Report issues on Github.
 ## Contact Information 🖥️
 
 - Name: Krystal Hardin
-- Email: krystalhardin2010@att.net
+- Email: Krystalhardin2010@att.net
 - GitHub: LilmissKryss

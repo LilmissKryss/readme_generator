@@ -45,15 +45,15 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Features](#features)
   * [Installation](#installation)
-  * [Contributers](#contributers)
-  * [Contributing](#contributing)
+  * [Contributors](#contributors)
+  * [Contribution Guidelines](#contributinonGuidelines)
   * [Tests](#tests)
   * [Issues](#issues)
   * [License](#license)
   * [Questions](#questions)
   * [GitHub](#github)
   * [Email](#email)
-  ${renderLicenseLink(data.license)} 
+  
 
   ## Description 📝
   ${data.description}
@@ -82,8 +82,6 @@ function generateMarkdown(data) {
 
   ## Issues 🐞
   ${data.issues}
-
-  
 
 ## Contact Information 🖥️
 * Name: ${data.name}

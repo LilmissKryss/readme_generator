@@ -43,12 +43,12 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributers",
+    name: "contributors",
     message: "Please list any project contributors.",
   },
   {
     type: "input",
-    name: "contributing",
+    name: "contributionGuidelines",
     message: "How can others contribute to the project?",
   },
   {
@@ -65,7 +65,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What license does the project use?",
-    choices: ["MIT", "GNU GPLv3", "Apache 2.0", "ISC"],
+    choices: ["MIT", "GNU GPLv3", "Apache 2.0", "ISC", "None"],
   },
   {
     type: "input",
@@ -105,6 +105,13 @@ function createProjectFolder(projectName, readmeContent) {
 
   // Define the path for the README file
   const readmePath = path.join(projectPath, "README.md");
+
+  // Check if README already exists
+  if (fs.existsSync(readmePath)) {
+    console.log(`README.md already exists in "${projectName}". 
+      Aborting...`);
+    return;
+  }
 
   // Write the README content to the file
   fs.writeFileSync(readmePath, readmeContent);
