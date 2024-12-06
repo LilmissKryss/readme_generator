@@ -1,31 +1,26 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== "None") {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
-  return "";
+  return license !== "None"
+    ? `![License](https://img.shields.io/badge/License-${license}-blue.svg)`
+    : "";
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== "None") {
-    return `\n* [License](#license)\n`;
-  }
-  return "";
+  return license !== "None" ? `\n* [License](#license)` : "";
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license !== "None") {
-    return `## License
+  return license !== "None"
+    ? `## License
     This application is covered under the **${license}** license. 
     For more information, see the [License]
-    (https://choosealicense.com/licenses/${license.toLowerCase()}/).`;
-  }
-  return "";
+    (https://choosealicense.com/licenses/${license.toLowerCase()}/).`
+    : "";
 }
 
 // TODO: Create a function to generate markdown for README
@@ -50,6 +45,7 @@ function generateMarkdown(data) {
   * [Tests](#tests)
   * [Issues](#issues)
   * [License](#license)
+  ${renderLicenseLink(data.license)}
   * [Questions](#questions)
   * [GitHub](#github)
   * [Email](#email)
@@ -71,11 +67,11 @@ function generateMarkdown(data) {
   ${data.installation}
 
   ## Contributers 👩🏾‍🤝‍👨🏻
-  ${data.contributers}
+  ${data.contributors}
   
   ## Contribution Guidelines 🗞️
   How to contribute:
-  ${data.contributing}
+  ${data.contributionGuidelines}
 
   ## Tests 📚
   ${data.tests}

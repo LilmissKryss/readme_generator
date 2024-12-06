@@ -10,31 +10,37 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the project title?",
+    validate: (input) => (input ? true : "Project title is required"),
   },
   {
     type: "input",
     name: "name",
     message: "What is your name?",
+    validate: (input) => (input ? true : "Name is required"),
   },
   {
     type: "input",
     name: "description",
     message: "Please provide a description of your project.",
+    validate: (input) => (input ? true : "Project description is required"),
   },
   {
     type: "input",
     name: "usage",
     message: "How is the project used?",
+    validate: (input) => (input ? true : "Project usage is required"),
   },
   {
     type: "input",
     name: "features",
     message: "What are the features of the project?",
+    validate: (input) => (input ? true : "Project features is required"),
   },
   {
     type: "input",
     name: "installation",
     message: "Please provide installation instructions.",
+    validate: (input) => (input ? true : "Installation instructions required"),
   },
   {
     type: "input",
@@ -45,6 +51,7 @@ const questions = [
     type: "input",
     name: "contributors",
     message: "Please list any project contributors.",
+    validate: (input) => (input ? true : "Contributors required"),
   },
   {
     type: "input",
@@ -66,28 +73,26 @@ const questions = [
     name: "license",
     message: "What license does the project use?",
     choices: ["MIT", "GNU GPLv3", "Apache 2.0", "ISC", "None"],
+    validate: (input) => (input ? true : "Project license is required"),
   },
   {
     type: "input",
     name: "github",
     message: "Please provide your GitHub username.",
+    validate: (input) => (input ? true : "GitHub is required"),
   },
   {
     type: "input",
     name: "questions",
     message: "Please provide your email for project questions.",
+    validate: (input) => (input ? true : "Email is required"),
   },
 ];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    const projectName = answers.title.split(" ").join("_"); // Generate project folder name
+    const projectName = answers.title.replace(/[^a-z0-9]/gi, "_"); // Generate project folder name
     const readmeContent = generateMarkdown(answers); // Generate README content
 
     console.log(`Creating folder and generating README.md file...`);
