@@ -45,7 +45,6 @@ function generateMarkdown(data) {
   * [Tests](#tests)
   * [Issues](#issues)
   * [License](#license)
-  ${renderLicenseLink(data.license)}
   * [Questions](#questions)
   * [GitHub](#github)
   * [Email](#email)
@@ -80,9 +79,9 @@ function generateMarkdown(data) {
   ${data.issues}
 
 ## Contact Information 🖥️
-* Name: ${data.name}
-* Email: ${data.questions}
-* GitHub: ${data.github}
+Name: ${data.name}
+Email: ${data.questions}
+GitHub: ${data.github}
 `;
 }
 
