@@ -35,8 +35,6 @@
   ## Usage 📖
   Users answer questions in the terminal to generate a readme.md file.
 
-  ## Video Walkthrough 
-  Please see setup and usage instructions for the README Generator:
   https://www.loom.com/share/4e9f45d4f2e0402eba2e7a07c5abc941
 
   ## Features 🔂
