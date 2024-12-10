@@ -56,7 +56,7 @@
   ## Issues 🐞
   Report all issues on GitHub.
 
-## Contact Information 🖥️
+## Contact Information  🖥️
 Name: Krystal Hardin 
 Email: Krystalhardin2010@att.net
 GitHub: LilmissKryss
